@@ -1,29 +1,78 @@
+/* Apply a background color to the body */
 body {
+  background-color: #d1ffcb;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
+/* Style the form container */
 form {
-  margin: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
   padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #007bff;
+/* Style the file input */
+
+/* Style the file input label */
+.input1 + label {
+  background-color: #3498db;
   color: #fff;
   border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
+.input1 + label:hover {
+  background-color: #2980b9;
 }
 
-#selected-file {
-  margin: 20px;
-  font-weight: bold;
-  color: #007bff;
+/* Style the submit button */
+.btn1 {
+  background-color: #1caa00;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn1:hover {
+  background-color: #27ae60;
+}
+
+/* Style the image container */
+#image-container {
+  margin-top: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Style the transaction details */
+#transaction {
+  margin-top: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Define a fadeIn animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
