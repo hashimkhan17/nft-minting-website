@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload Example</title>
+</head>
+<body>
+    <h1>File Upload</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="file" accept=".jpg, .jpeg, .png, .gif">
+        <button type="button" onclick="uploadFile()">Upload</button>
+    </form>
+    <div id="response"></div>
+
+    <script>
+        function uploadFile() {
+            // Get the selected file
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            // Check if a file is selected
+            if (!file) {
+                alert('Please select a file to upload.');
+                return;
+            }
+
+            // Create a FormData object to send the file
+            const formData = new FormData();
+            formData.append('file', file);
+
+            // Send the file to the server using XMLHttpRequest
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/upload', true); // Replace '/upload' with your server endpoint
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        document.getElementById('response').innerHTML = response.message;
+                    } else {
+                        document.getElementById('response').innerHTML = 'Upload failed.';
+                    }
+                }
+            };
+            xhr.send(formData);
+        }
+    </script>
+</body>
+</html>
+
+write a html css and javascript code  also node js code ....... in which we have form which contain two options one is file upload input and other is button and that file will upload on server 
